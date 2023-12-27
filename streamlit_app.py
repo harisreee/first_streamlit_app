@@ -46,16 +46,16 @@ streamlit.error()
 streamlit.stop()
 # import snowflake.connector
 
-my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
-my_cur = my_cnx.cursor()
-my_cur.execute("SELECT * from fruit_load_list")
-my_data_rows = my_cur.fetchall()
-streamlit.header("The fruit load list contains:")
-streamlit.dataframe(my_data_rows)
+#my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
+#my_cur = my_cnx.cursor()
+#my_cur.execute("SELECT * from fruit_load_list")
+#my_data_rows = my_cur.fetchall()
+#streamlit.header("The fruit load list contains:")
+#streamlit.dataframe(my_data_rows)
 
 #allow the end user to add a fruit to the list
-add_my_fruit = streamlit.text_input('what fruit would you like to add?','jackfruit')
+#add_my_fruit = streamlit.text_input('what fruit would you like to add?','jackfruit')
 
-streamlit.write('Thanks for adding ', add_my_fruit)
+#streamlit.write('Thanks for adding ', add_my_fruit)
 #this will not work correctly, but just go with it for now
-my_cur.execute("insert into fruit_load_list_values('from streamlit')")
+#my_cur.execute("insert into fruit_load_list_values('from streamlit')")
